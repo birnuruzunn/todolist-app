@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="page-header">
-            <h1><a href="/">TodoList App</a></h1>
+            <h1>TodoList App</a></h1>
         </div>
 
         <div class="content container">
@@ -17,10 +17,10 @@
         		<div class="col-md-8">
         			
 				    <div class="todo">
-				    	<form action="" method="POST">{% csrf_token %}
+				    	<form action="" method="post">{% csrf_token %}
 				    		<label for="description">Description</label><br>				    		
-				    		<input type="text" id="description" name="title" placeholder="What do you need to do?" name="description" required>
-				    		<button type="submit" class="save btn btn-default">save</button>
+				    		<input type="text" style="width:200px; height:25px;" id="description" name="title" placeholder="What do you need to do?" name="description" required>
+				    		<input type="submit" value="save">
 				    	</form>					        
 				    </div>
 				
