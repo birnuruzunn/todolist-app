@@ -1,0 +1,31 @@
+{% load static %}
+<html>
+    <head>
+        <title>to do list page</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">        
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="/">TodoList App</a></h1>
+        </div>
+
+        <div class="content container">
+        	<div class="row">
+        		<h2>yeni kayıt sayfası</h2>
+        		<div class="col-md-8">
+        			
+				    <div class="todo">
+				    	<form action="" method="POST">{% csrf_token %}
+				    		<label for="description">Description</label><br>				    		
+				    		<input type="text" id="description" name="title" placeholder="What do you need to do?" name="description" required>
+				    		<button type="submit" class="save btn btn-default">save</button>
+				    	</form>					        
+				    </div>
+				
+        		<div>
+        	</div>
+        </div>
+    </body>
+</html>

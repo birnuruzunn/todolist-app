@@ -8,8 +8,9 @@ class TodoList(models.Model):
     created_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) 
     due_date = models.DateField(default=timezone.now().strftime("%Y-%m-%d")) 
     
-    def order(self):
-        return self.created_date #ordering by the created field
+    class meta:
+    	ordering = ["-created_date"]
+        #return self.created_date #ordering by the created field
 
     def __str__(self):
         return self.title #name to be shown when called
