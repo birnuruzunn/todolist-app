@@ -3,29 +3,34 @@
     <head>
         <title>to do list page</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">        
-        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">    
+        <link rel="stylesheet" href="{% static 'css/todolist.css' %}">    
+        <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet" type="text/css">
+       	<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div class="page-header">
-            <h1>TodoList App</a></h1>
+            <h1>TodoList App</h1>
         </div>
 
-        <div class="content container">
-        	<div class="row">
-        		<h2>yeni kayıt sayfası</h2>
-        		<div class="col-md-8">
-        			
-				    <div class="todo">
-				    	<form action="" method="post">{% csrf_token %}
-				    		<label for="description">Description</label><br>				    		
-				    		<input type="text" style="width:200px; height:25px;" id="description" name="title" placeholder="What do you need to do?" name="description" required>
-				    		<input type="submit" value="save">
-				    	</form>					        
-				    </div>
-				
-        		<div>
-        	</div>
-        </div>
+    	<form action="" method="post">{% csrf_token %}
+	        <div class="content1-container">
+	        	<div class="row">
+	        		<h2>Lets, enter a new task!</h2>
+	        		<div class="col-md-8">        			
+					    <div class="todo"><h3>						    						    	
+				    		<label for="description">Description</label><br>
+				    		<table><tr><td><div align="Left">			    		
+				    		<input type="text" id="description" name="title" placeholder="What do you need to do?" name="description" required></div></td>
+				    		<td><div align="Right">
+				    		<button type="submit" class="button">save</button></h3>
+				    		</div></td></tr></table>		    			        
+					    </div>						
+	        		<div>
+	        	</div>	              
+			<div class="content2-container">
+			</div>
+    	</form>
+      
     </body>
 </html>
