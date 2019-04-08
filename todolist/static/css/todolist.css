@@ -66,6 +66,28 @@ input::-webkit-input-placeholder {
     width:50px; 
     font-size: 15px;
 }
+.uncompleted {
+    height:26px;
+    width:auto; 
+    font-size: 15px;       
+}
+
+.completed {
+    height:26px;
+    width:auto; 
+    font-size: 15px;
+}
+
+.complete-true {
+    text-decoration:  line-through;
+    color: #bebebe;
+}
+
+.taskDelete{
+    height:26px;
+    width:auto; 
+    font-size: 15px;    
+}
 
 .calendar {
     margin-right: 10px;
@@ -73,11 +95,13 @@ input::-webkit-input-placeholder {
 }
 .taskItem {
     border-top: 2px solid #e5e5e5;    
-    padding: 10px 0;
+    padding-top: 10px;
     color: #000000;
     font-size: 14px;
     letter-spacing: 0.5px;
     width: 400px;
+    height: auto;
+
 }
 .taskList .taskItem:nth-child(even) {
     background: #fcfcfc;
@@ -88,10 +112,7 @@ input::-webkit-input-placeholder {
     font-weight: bold;
     text-transform: uppercase;  
 }
-.complete-true {
-    text-decoration:  line-through;
-    color: #bebebe;
-}
+
 
 h1 {
     font-family: 'Merienda', cursive;
