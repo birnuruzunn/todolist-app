@@ -67,7 +67,7 @@ input::-webkit-input-placeholder {
     font-size: 15px;
 }
 
-.fa-calendar {
+.calendar {
     margin-right: 10px;
     font-size: 15px;
 }
@@ -88,7 +88,10 @@ input::-webkit-input-placeholder {
     font-weight: bold;
     text-transform: uppercase;  
 }
-
+.complete-true {
+    text-decoration:  line-through;
+    color: #bebebe;
+}
 
 h1 {
     font-family: 'Merienda', cursive;
