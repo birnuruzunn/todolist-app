@@ -50,39 +50,80 @@
 								    <div class="todo"><h3>	
 									    <ul class="taskList">
 							            {% for todo in todos %} <!-- django template lang - for loop -->
-							                <li class="taskItem">
-							                    <label for="{{ todo.id }}"><span id='1'>{{ todo.title }}</span></label><br/>			               
-							                    <strong class="taskDate"><i class="calendar"></i> {{ todo.created_date}} - {{ todo.due_date }}</strong><br/>    
-							                 	{% if todo.completed %}
-							                    	<table>
-							                    		<tr>
-							                    			<td>
+							                <li class="taskItem">							                       
+							                 	{% if todo.completed %}								                    			
+				                    				<label for="{{ todo.id }}" class="striker"><span id='1'>{{ todo.title }}</span></label><br/>
+				                   					<strong class="taskDate"><i class="calendar"></i> {{ todo.created_date}} - {{ todo.due_date }}</strong><br/> 
+				                   					<table>
+				                   						<tr>
+				                   							<td>
 								                       			<form action="uncompleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}
 								                    				<button class="uncompleted" type="submit">uncompleted</button>  
 								                    			</form>
 								                    		</td>
-								                    		<td>  
+								                    		<td>
 									                    		<form action="deleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}	
 				                    								<button class="taskDelete"type="submit">delete</button>
 				                    							</form>
-			                    							</td>
-			                    						</tr>
-			                    					</table>
-			                    				{% else %}
-			                    					<table>
-			                    						<tr>
-			                    							<td>
+				                    						</td>
+				                    					</tr>
+				                    				</table>
+			                    				{% else %}			                    					
+                    								<label for="{{ todo.id }}" ><span id='1'>{{ todo.title }}</span></label><br/>	
+				                    				<strong class="taskDate"><i class="calendar"></i> {{ todo.created_date}} - {{ todo.due_date }}</strong><br/> 
+				                    				<table>
+				                    					<tr>
+				                    						<td>
 										                    	<form action="completeTodo/{{ todo.id }}/" method="post">{% csrf_token %}
 										                    		<button class="completed" type="submit">completed</button>  
 										                    	</form>
-								                   			</td>
-									                   		<td> 
+										                    </td>
+										                    <td>	
 									                    	    <form action="deleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}	
 					                    							<button class="taskDelete" type="submit">delete</button>
 					                    						</form>
-			                    							</td>
-			                    						</tr>
-			                    					</table>
+					                    					</td>
+					                    				</tr>
+					                    			</table>		                    						
+			                    				{% endif %}			                    				 				
+							                </li>
+							            {% endfor %}
+							            {% for todo in completed_todos %} <!-- django template lang - for loop -->
+							                <li class="taskItem">							                      
+							                 	{% if todo.completed %}
+				                    				<label for="{{ todo.id }}" class="striker"><span id='1'>{{ todo.title }}</span></label><br/>
+				                   					<strong class="taskDate"><i class="calendar"></i> {{ todo.created_date}} - {{ todo.due_date }}</strong><br/> 
+				                   					<table>
+				                   						<tr>
+				                   							<td>
+								                       			<form action="uncompleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}
+								                    				<button class="uncompleted" type="submit">uncompleted</button>  
+								                    			</form>
+								                    		</td>
+								                    		<td>	
+									                    		<form action="deleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}	
+				                    								<button class="taskDelete"type="submit">delete</button>
+				                    							</form>
+				                    						</td>
+				                    					</tr>
+				                    				</table>	
+			                    				{% else %} 
+			                    					<label for="{{ todo.id }}" ><span id='1'>{{ todo.title }}</span></label><br/>	
+				                    				<strong class="taskDate"><i class="calendar"></i> {{ todo.created_date}} - {{ todo.due_date }}</strong><br/>  
+			                    					<table>
+			                    						<tr>
+			                    							<td>                  				
+										                    	<form action="completeTodo/{{ todo.id }}/" method="post">{% csrf_token %}
+										                    		<button class="completed" type="submit">completed</button>  
+										                    	</form>
+										                    </td>
+										                    <td>
+									                    	    <form action="deleteTodo/{{ todo.id }}/" method="post">{% csrf_token %}	
+					                    							<button class="taskDelete" type="submit">delete</button>
+					                    						</form>
+					                    					</td>
+					                    				</tr>
+					                    			</table>			                    					
 			                    				{% endif %}			                    				 				
 							                </li>
 							            {% endfor %}

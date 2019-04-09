@@ -78,9 +78,8 @@ input::-webkit-input-placeholder {
     font-size: 15px;
 }
 
-.complete-true {
-    text-decoration:  line-through;
-    color: #bebebe;
+.striker {
+    text-decoration: line-through;
 }
 
 .taskDelete{

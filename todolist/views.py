@@ -4,8 +4,11 @@ from .models import TodoList
 
 def to_do_list(request):
 	todos = TodoList.objects.order_by('id') #quering all todos with the object manager
-	return render(request, 'todolist/to_do_list.html', {"todos": todos})
-
+	completed_todos = TodoList.objects.filter(completed=True)
+	todos = TodoList.objects.filter(completed=False)
+	
+	return render(request, 'todolist/to_do_list.html', {"todos": todos, 'completed_todos': completed_todos})
+	
 def addTodo(request):
 	title = request.POST["title"] #title
 	date = str(request.POST["date"]) #date
@@ -18,16 +21,18 @@ def addTodo(request):
 def completeTodo(request,todo_id):
 	complete_list = TodoList.objects.get(id=todo_id) #getting todo id
 	complete_list.completed = True
-	complete_list.save()
+	complete_list.save()	
+
 	return HttpResponseRedirect('/')
 
 def uncompleteTodo(request,todo_id):
-	complete_list = TodoList.objects.get(id=todo_id) #getting todo id
-	complete_list.completed = False
-	complete_list.save()
+	uncomplete_list = TodoList.objects.get(id=todo_id) #getting todo id
+	uncomplete_list.completed = False	
+	uncomplete_list.save()
 	return HttpResponseRedirect('/')
 
 def deleteTodo(request, todo_id):
 	delete_list = TodoList.objects.get(id=todo_id) #getting todo id
 	delete_list.delete() #deleting todo
 	return HttpResponseRedirect('/')
+
