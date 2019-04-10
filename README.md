@@ -1,7 +1,7 @@
 # todolist-app 
 
 **todolist-app** is a personal to do tracker application, in order that people are able to organize their daily lives and they can use it to do task management. 
-> Lets you keep track of all your tasks, projects, and goals on a simple interface  \{^^}/
+> Lets you keep track of all your tasks, projects, and goals on a simple interface :blush:
 
 ### Features
 
