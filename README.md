@@ -23,11 +23,9 @@ If you have not yet installed django and python, you can check the link below.
 https://tutorial.djangogirls.org/en/installation/
 
 ##### Migrate:
-` Python
-python manage.py migrate` 
+`python manage.py migrate` 
 
 And then start the server (default: http://localhost:8000)
 
-` Python
-python manage.py runserver`
+`python manage.py runserver`
 
